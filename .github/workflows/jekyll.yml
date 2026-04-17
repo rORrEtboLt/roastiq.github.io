@@ -5,6 +5,7 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   github-pages:
@@ -19,6 +20,7 @@ jobs:
       - run: bundle exec jekyll build --trace
         env:
           JEKYLL_ENV: production
+      - run: cp CNAME _site/CNAME 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site/
