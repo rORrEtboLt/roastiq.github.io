@@ -1,0 +1,13 @@
+title: RoastIQ
+description: Open-source coffee roasting telemetry system built on ESP32
+theme: minima
+github:
+  repository_url: https://github.com/rORrEtboLt/esp32_temp
+  repository_name: rORrEtboLt/esp32_temp
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+future: true
