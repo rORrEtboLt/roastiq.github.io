@@ -22,6 +22,10 @@
     @media (max-width: 700px) { .content { flex-direction: column; } }
     footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e1e4e8; color: #586069; font-size: 0.9rem; }
     blockquote { border-left: 4px solid #dfe2e5; padding-left: 1rem; margin-left: 0; color: #586069; }
+    .sidebar { background: #f6f8fa; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; }
+    .sidebar h3 { margin-top: 0; }
+    .sidebar ul { list-style: none; padding-left: 0; margin: 0; }
+    .sidebar li { margin-bottom: 0.5rem; }
   </style>
 </head>
 <body>
@@ -30,7 +34,14 @@
     <a href="{{ site.baseurl }}/docs/">Docs</a>
     <a href="{{ site.github.repository_url }}">GitHub</a>
   </nav>
-  {{ content }}
+  <div class="content">
+    <main>
+      {{ content }}
+    </main>
+    <aside>
+      {% include sidebar.html %}
+    </aside>
+  </div>
   <footer>
     <a href="{{ site.github.repository_url }}">RoastIQ on GitHub</a> · MIT License
   </footer>

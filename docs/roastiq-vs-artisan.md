@@ -1,3 +1,8 @@
+---
+layout: default
+title: RoastIQ vs Artisan
+---
+
 # RoastIQ vs. Artisan Scope
 
 RoastIQ and Artisan Scope are **complementary tools**, not competitors. Understanding what each does best helps you use them together effectively.

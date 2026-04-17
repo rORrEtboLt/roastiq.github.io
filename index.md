@@ -32,11 +32,11 @@ ESP32 (RoastIQ) ──── WebSocket (4 Hz) ────► Artisan Scope (des
 
 ## Documentation
 
-- [ESP32 Firmware Deep Dive](docs/esp32-firmware.html) — How main.cpp reads sensors and serves WebSocket data
-- [Artisan Scope Integration](docs/artisan-integration.html) — Direct WebSocket and server-based connection modes
-- [System Architecture](docs/architecture.html) — Full system architecture
-- [RoastIQ vs Artisan Scope](docs/roastiq-vs-artisan.html) — Understanding what each tool does
+- [ESP32 Firmware Deep Dive]({{ site.baseurl }}/docs/esp32-firmware.html) — How main.cpp reads sensors and serves WebSocket data
+- [Artisan Scope Integration]({{ site.baseurl }}/docs/artisan-integration.html) — Direct WebSocket and server-based connection modes
+- [System Architecture]({{ site.baseurl }}/docs/architecture.html) — Full system architecture
+- [RoastIQ vs Artisan Scope]({{ site.baseurl }}/docs/roastiq-vs-artisan.html) — Understanding what each tool does
 
 ## License
 
-RoastIQ is open-source under the [MIT License](LICENSE).
+RoastIQ is open-source under the [MIT License]({{ site.baseurl }}/LICENSE).

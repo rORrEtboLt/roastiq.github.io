@@ -1,3 +1,8 @@
+---
+layout: default
+title: Overview
+---
+
 # RoastIQ — Open-Source Coffee Roasting Telemetry
 
 **RoastIQ** is an open-source coffee roasting telemetry system built on the ESP32 microcontroller. It reads temperature data from MAX6675 thermocouples and streams it in real-time to **Artisan Scope** (the industry-standard coffee roasting software) and a web-based dashboard.

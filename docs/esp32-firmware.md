@@ -1,3 +1,8 @@
+---
+layout: default
+title: ESP32 Firmware
+---
+
 # ESP32 Firmware Deep Dive
 
 This document explains how the ESP32 firmware in `src/main.cpp` works — from reading thermocouple temperatures to serving data over WebSocket to Artisan Scope.

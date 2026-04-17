@@ -1,3 +1,8 @@
+---
+layout: default
+title: Artisan Integration
+---
+
 # Artisan Scope Integration
 
 Artisan Scope is the industry-standard desktop application for coffee roast profiling. RoastIQ's ESP32 firmware is designed to **stream live temperature data directly to Artisan**, with no server required.

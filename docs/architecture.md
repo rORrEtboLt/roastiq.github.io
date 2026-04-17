@@ -1,3 +1,8 @@
+---
+layout: default
+title: Architecture
+---
+
 # System Architecture
 
 This document describes the full RoastIQ system architecture — from ESP32 sensor reading to web dashboard display.
