@@ -3,40 +3,84 @@ layout: default
 title: RoastIQ
 ---
 
-# RoastIQ — Open-Source Coffee Roasting Telemetry
+# RoastIQ
 
-**RoastIQ** is an open-source coffee roasting telemetry system built on the ESP32 microcontroller. Stream real-time Bean Temperature (BT) and Exhaust Temperature (ET) to **Artisan Scope** and a web dashboard.
+Open-source coffee roasting telemetry. Stream real-time Bean Temperature (BT) and Exhaust Temperature (ET) from an ESP32 to Artisan Scope.
 
-## Key Features
+---
 
-- **ESP32-based hardware** — affordable, WiFi-enabled, runs locally
-- **Artisan Scope compatible** — connects directly via WebSocket
-- **4 Hz temperature sampling** — Bean Temperature (BT) and Exhaust Temperature (ET)
-- **Web dashboard** — live roast curves, event marking, roast history
-- **Open hardware** — uses off-the-shelf MAX6675 thermocouple amplifiers
-- **MIT licensed** — free for commercial and personal use
+## Get Started
 
-## Architecture
+Three steps to get your roaster connected:
 
+### 1. Flash the ESP32
+
+Install the firmware on your ESP32 using PlatformIO:
+
+```bash
+pip install platformio
+pio run -e dev --target upload --upload-port /dev/ttyUSB0
+pio device monitor --port /dev/ttyUSB0 --baud 115200
 ```
-ESP32 (RoastIQ) ──── WebSocket (4 Hz) ────► Artisan Scope (desktop)
-         │
-         └──── REST POST (1 Hz) ────► RoastIQ Server ────► Web Dashboard
-```
 
-## Quick Start
+The ESP32 creates a WiFi network named **RoastIQ**. Note the IP address (e.g. `192.168.4.1`).
 
-1. Flash the ESP32 with PlatformIO
-2. Connect Artisan to `ws://<esp32-ip>/ws`
-3. Start roasting!
+### 2. Wire the Thermocouples
+
+Connect two MAX6675 modules to the ESP32:
+
+| Component | GPIO |
+|-----------|------|
+| BT CLK / CS / DO | 5 / 23 / 19 |
+| ET CLK / CS / DO | 26 / 25 / 33 |
+
+Full wiring: [Getting Started](docs/getting-started.html)
+
+### 3. Connect to Artisan
+
+1. Open **Artisan → Config → Device**
+2. Set ET/BT device to **WebSocket**
+3. Enter URL: `ws://192.168.4.1/ws`
+4. Press **ON**
+
+BT and ET curves appear at 4 Hz.
+
+---
+
+## Downloads
+
+Download the firmware and circuit documentation:
+
+| File | Description |
+|------|-------------|
+| [main.cpp](https://raw.githubusercontent.com/rORrEtboLt/esp32_temp/master/src/main.cpp) | ESP32 firmware |
+| [temperature.h](https://raw.githubusercontent.com/rORrEtboLt/esp32_temp/master/include/temperature.h) | Temperature validation + rolling average |
+| [telemetry.h](https://raw.githubusercontent.com/rORrEtboLt/esp32_temp/master/include/telemetry.h) | WebSocket JSON frame builder |
+| [platformio.ini](https://raw.githubusercontent.com/rORrEtboLt/esp32_temp/master/platformio.ini) | Build configuration |
+| [CIRCUIT.md](https://raw.githubusercontent.com/rORrEtboLt/esp32_temp/master/CIRCUIT.md) | Wiring diagram |
+
+---
+
+## Features
+
+- **4 Hz sampling** — Bean Temperature and Exhaust Temperature
+- **Artisan compatible** — Direct WebSocket connection, no server required
+- **Standalone operation** — ESP32 creates its own WiFi access point
+- **Open source** — MIT licensed, full firmware available
+- **Simple hardware** — Off-the-shelf MAX6675 thermocouple modules
+
+---
 
 ## Documentation
 
-- [ESP32 Firmware Deep Dive]({{ site.baseurl }}/docs/esp32-firmware.html) — How main.cpp reads sensors and serves WebSocket data
-- [Artisan Scope Integration]({{ site.baseurl }}/docs/artisan-integration.html) — Direct WebSocket and server-based connection modes
-- [System Architecture]({{ site.baseurl }}/docs/architecture.html) — Full system architecture
-- [RoastIQ vs Artisan Scope]({{ site.baseurl }}/docs/roastiq-vs-artisan.html) — Understanding what each tool does
+- [Getting Started](docs/getting-started.html) — Quick start guide
+- [Firmware Guide](docs/firmware-guide.html) — Build and customize the firmware
+- [Artisan Guide](docs/artisan-guide.html) — Connect to Artisan Scope
+- [Troubleshooting](docs/troubleshooting.html) — Fix common issues
+- [Architecture](docs/architecture.html) — System design
+
+---
 
 ## License
 
-RoastIQ is open-source under the [MIT License]({{ site.baseurl }}/LICENSE).
+MIT License — free for commercial and personal use. See [LICENSE](LICENSE).
