@@ -7,6 +7,8 @@ title: RoastIQ
 
 Open-source coffee roasting telemetry. Stream real-time Bean Temperature (BT) and Exhaust Temperature (ET) from an ESP32 to Artisan Scope.
 
+![RoastIQ hardware — ESP32 with dual MAX6675 thermocouple modules in a 3D-printed enclosure](assets/images/hardware.jpg)
+
 ---
 
 ## Get Started

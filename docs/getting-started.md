@@ -1,3 +1,8 @@
+---
+layout: default
+title: Getting Started
+---
+
 # Getting Started with RoastIQ
 
 Get your coffee roasting telemetry system running in three steps.

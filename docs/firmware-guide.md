@@ -1,3 +1,8 @@
+---
+layout: default
+title: Firmware Guide
+---
+
 # ESP32 Firmware Guide
 
 Build, customize, and update the RoastIQ firmware.
