@@ -1,3 +1,8 @@
+---
+layout: default
+title: Artisan Guide
+---
+
 # Connecting to Artisan Scope
 
 Artisan Scope is the industry-standard desktop app for coffee roast profiling. RoastIQ streams live temperature data directly to Artisan.
